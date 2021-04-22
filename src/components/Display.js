@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import DataHandler from './DataHandler';
+import Data from '../data'
 
 class Display extends Component{
     constructor(props){
@@ -16,8 +17,29 @@ class Display extends Component{
             favoriteMovies: [
                 'test',
                 'test2'
-            ]
+            ],
+            data: [...Data]
         }
+
+        this.goToEmployee = this.goToEmployee.bind(this);
+    }
+
+    componentDidMount(){
+        this.goToEmployee(0);
+    }
+
+    goToEmployee(num){
+
+
+        let person = this.state.data[num]
+        this.setState({
+            name: `${person.name.first} ${person.name.last}`,
+            city: person.city,
+            country: person.country,
+            employer: person.employer,
+            title: person.title,
+            favoriteMovies: person.favoriteMovies
+        })
     }
 
     render(){
