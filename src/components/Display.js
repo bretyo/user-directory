@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import DataHandler from './DataHandler';
 
 class Display extends Component{
     constructor(props){
@@ -37,6 +38,7 @@ class Display extends Component{
                         })}
                     </ol>
                 </div>
+                <DataHandler/>
             </div>
         )
     }

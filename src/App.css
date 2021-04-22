@@ -66,3 +66,25 @@ li{
 span{
   font-weight: 300;
 }
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+button{
+  color: white;
+  background: none;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+
+}
+
+.btnAlter{
+  background-color: rgb(0, 156, 204);
+  margin: 0 10px 0 10px;
+  padding: 5px 15px 5px 15px;
+  border-radius: 500px;
+}
