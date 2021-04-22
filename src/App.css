@@ -1,13 +1,68 @@
 body{
   font-family: 'roboto';
+  
+}
+#display-container{
   background-color: rgb(31, 31, 31);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-wrap: wrap;
 }
 
 .app-header{
   display: flex;
+  align-self: flex-start;
   background-color: rgb(0, 156, 204);
   align-items: center;
   padding: 40px;
   font-weight: 700;
   font-size: 1.5rem;
+  width: 100%;
+  
+}
+
+
+
+#display{ 
+  display: flex;
+  flex-direction:column;
+  background-color: white;
+  width: 800px;
+  height: 400px;
+  padding-left: 100px;
+}
+
+h2{
+  margin: 0;
+  font-weight: 900;
+}
+
+.index{
+  align-self:flex-end;
+  margin: 5px;
+}
+
+h2.name{
+  margin-bottom: 20px;
+  border-bottom: solid rgb(0, 156, 204);
+  /* display:inline-block; */
+  align-self: flex-start;
+}
+
+h3{
+  margin: 0;
+  margin-bottom : 10px;
+}
+
+ol{
+  margin: 0;
+}
+
+li{
+  margin-bottom: 5px;
+}
+
+span{
+  font-weight: 300;
 }
