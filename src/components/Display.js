@@ -48,12 +48,19 @@ class Display extends Component{
     }
 
     deleteIndex(){
-        if(this.state.dataIndex < this.state.data.length){
+        if(this.state.dataIndex < this.state.data.length-1){
             this.goToEmployee(this.state.dataIndex + 1)
             this.setState({ 
                 data: [...this.state.data.slice(0,this.state.dataIndex), ...this.state.data.slice(this.state.dataIndex + 1)], 
                 dataIndex: this.state.dataIndex
             } )
+        }
+        else{
+            this.goToEmployee(this.state.dataIndex - 1);
+            this.setState({
+                data: [...this.state.data.slice(0,this.state.dataIndex)],
+                dataIndex: this.state.dataIndex -1
+            })
         }
     }
 
