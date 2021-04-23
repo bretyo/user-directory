@@ -29,21 +29,27 @@ class Display extends Component{
     }
 
     goToEmployee(num){
-
-
-        let person = this.state.data[num]
-        this.setState({
+        console.log(num)
+        console.log(this.state.data[num])
+        if(num >= 0 && num < this.state.data.length){
+            let person = this.state.data[num]
+            this.setState({
+            dataIndex: num,
+            id: person.id,
             name: `${person.name.first} ${person.name.last}`,
             city: person.city,
             country: person.country,
             employer: person.employer,
             title: person.title,
             favoriteMovies: person.favoriteMovies
-        })
+            })
+        }
+
+        
     }
 
     render(){
-
+        console.log(this.state.data)
         return(
             <div >
                 <div id='display'>
@@ -60,7 +66,11 @@ class Display extends Component{
                         })}
                     </ol>
                 </div>
-                <DataHandler/>
+                <DataHandler 
+                    goToEmployee={this.goToEmployee} 
+                    index={this.state.dataIndex}
+                    data={this.state.data}
+                    />
             </div>
         )
     }
