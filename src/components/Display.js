@@ -22,6 +22,7 @@ class Display extends Component{
         }
 
         this.goToEmployee = this.goToEmployee.bind(this);
+        this.deleteIndex = this.deleteIndex.bind(this);
     }
 
     componentDidMount(){
@@ -29,8 +30,6 @@ class Display extends Component{
     }
 
     goToEmployee(num){
-        console.log(num)
-        console.log(this.state.data[num])
         if(num >= 0 && num < this.state.data.length){
             let person = this.state.data[num]
             this.setState({
@@ -46,6 +45,16 @@ class Display extends Component{
         }
 
         
+    }
+
+    deleteIndex(){
+        if(this.state.dataIndex < this.state.data.length){
+            this.goToEmployee(this.state.dataIndex + 1)
+            this.setState({ 
+                data: [...this.state.data.slice(0,this.state.dataIndex), ...this.state.data.slice(this.state.dataIndex + 1)], 
+                dataIndex: this.state.dataIndex
+            } )
+        }
     }
 
     render(){
@@ -68,6 +77,7 @@ class Display extends Component{
                 </div>
                 <DataHandler 
                     goToEmployee={this.goToEmployee} 
+                    delete={this.deleteIndex}
                     index={this.state.dataIndex}
                     data={this.state.data}
                     />

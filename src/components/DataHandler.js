@@ -3,13 +3,19 @@ function DataHandler(props){
     let next = 'Next >'
     return(
         <div className='buttons'>
-            {props.index > 0 &&<button id='previous' onClick={()=>props.goToEmployee((+props.index) - 1)}>{prev}</button>}
+            <button id='previous' onClick={()=>{
+                console.log(props.index  + '-----Button')
+                props.goToEmployee((+props.index) - 1)}
+            }>{prev}</button>
             <section>
                 <button className='btnAlter'>Edit</button>
-                <button className='btnAlter'>Delete</button>
+                <button onClick={props.delete} className='btnAlter'>Delete</button>
                 <button className='btnAlter'>New</button>
             </section>
-            {props.index < props.data.length - 1 &&<button id='next' onClick={()=>props.goToEmployee((+props.index) + 1)}>{next}</button>}
+            <button id='next' onClick={()=>{
+                console.log(props.index  + '-----Button')
+                props.goToEmployee((+props.index) + 1)
+            }}>{next}</button>
         </div>
     )
 }
